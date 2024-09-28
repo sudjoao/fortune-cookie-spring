@@ -9,6 +9,22 @@ public class FortuneCookie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String phrase;
-    Number luckyNumber;
+    int luckyNumber;
     ColorEnum luckyColor;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getPhrase() {
+        return phrase;
+    }
+
+    public int getLuckyNumber() {
+        return luckyNumber;
+    }
+
+    public ColorEnum getLuckyColor() {
+        return luckyColor;
+    }
 }
