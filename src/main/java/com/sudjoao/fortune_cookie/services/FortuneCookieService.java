@@ -19,4 +19,8 @@ public class FortuneCookieService {
         var cookie = fortuneCookieRepository.findById(Long.valueOf(randomNumber));
         return cookie.map(FortuneCookieDTO::fromDomain).orElse(null);
     }
+
+    public void createFortuneCookie(FortuneCookieDTO fortuneCookieDTO) {
+        fortuneCookieRepository.save(fortuneCookieDTO.toDomain());
+    }
 }

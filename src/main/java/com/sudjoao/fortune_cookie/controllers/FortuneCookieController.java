@@ -3,9 +3,8 @@ package com.sudjoao.fortune_cookie.controllers;
 import com.sudjoao.fortune_cookie.models.dto.FortuneCookieDTO;
 import com.sudjoao.fortune_cookie.services.FortuneCookieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/cookie")
@@ -16,6 +15,12 @@ public class FortuneCookieController {
     @GetMapping
     FortuneCookieDTO getCookie() {
         return fortuneCookieService.getRandomFortuneCookie();
+    }
+
+    @PostMapping
+    public ResponseEntity<String> createCookie(@RequestBody FortuneCookieDTO fortuneCookieDTO) {
+        fortuneCookieService.createFortuneCookie(fortuneCookieDTO);
+        return ResponseEntity.ok("Created.");
     }
 
 }

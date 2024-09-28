@@ -12,6 +12,15 @@ public class FortuneCookie {
     int luckyNumber;
     ColorEnum luckyColor;
 
+    public FortuneCookie(String phrase, int luckyNumber, ColorEnum luckyColor) {
+        this.phrase = phrase;
+        this.luckyNumber = luckyNumber;
+        this.luckyColor = luckyColor;
+    }
+
+    public FortuneCookie() {
+    }
+
     public Long getId() {
         return id;
     }

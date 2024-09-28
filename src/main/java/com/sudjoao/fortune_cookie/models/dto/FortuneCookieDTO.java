@@ -7,4 +7,8 @@ public record FortuneCookieDTO(String phrase, int luckyNumber, ColorEnum luckyCo
     public static FortuneCookieDTO fromDomain(FortuneCookie cookie) {
         return new FortuneCookieDTO(cookie.getPhrase(), cookie.getLuckyNumber(), cookie.getLuckyColor());
     }
+
+    public FortuneCookie toDomain() {
+        return new FortuneCookie(phrase, luckyNumber, luckyColor);
+    }
 }
